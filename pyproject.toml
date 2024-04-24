@@ -1,0 +1,22 @@
+[project]
+name = "perception_tools"
+requires-python = ">=3.8.15"
+dynamic = ["version", "dependencies"]
+
+[build-system]
+requires = ["wheel", "setuptools", "setuptools_scm[toml]"]
+
+[tool.setuptools_scm]
+write_to = "perception_tools/_version.py"
+
+[tool.setuptools.packages.find]
+include = ["perception_tools"]
+
+[project.scripts]
+perception-main = "perception_tools.main:main"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project.optional-dependencies]
+all = []
